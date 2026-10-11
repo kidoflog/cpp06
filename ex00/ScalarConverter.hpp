@@ -6,7 +6,7 @@
 /*   By: kkido <kkido@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 15:01:32 by kkido             #+#    #+#             */
-/*   Updated: 2026/10/05 18:15:04 by kkido            ###   ########.fr       */
+/*   Updated: 2026/10/11 22:15:10 by kkido            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,10 @@ bool isChar(const std::string& str);
 bool isInt(const std::string& str);
 bool isDouble(const std::string& str);
 bool isFloat(const std::string& str);
-
+std::string formatDouble(const double& value);
+std::string formatFloat(const float& value);
+void convertNanNanf();
+void convertPlusInfInff();
+void convertMinusInfInff();
+void convertSpecialLiteral(const std::string& str);
 #endif
