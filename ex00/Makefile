@@ -6,11 +6,11 @@
 #    By: kkido <kkido@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/12 16:22:21 by kkido             #+#    #+#              #
-#    Updated: 2026/10/02 02:35:42 by kkido            ###   ########.fr        #
+#    Updated: 2026/10/02 21:25:38 by kkido            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucrat
+NAME = convert
 
 SRCS = main.cpp ScalarConverter.cpp
 
