@@ -6,7 +6,7 @@
 /*   By: kkido <kkido@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 15:01:27 by kkido             #+#    #+#             */
-/*   Updated: 2026/10/11 22:14:53 by kkido            ###   ########.fr       */
+/*   Updated: 2026/10/25 19:03:21 by kkido            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -268,31 +268,71 @@ std::string formatFloat(const float& value) {
 }
 
 void convertSpecialLiteral(const std::string& str) {
-  if (str == "nan" || str == "nanf") {
-    convertNanNanf();
-  } else if (str == "+inf" || str == "+inff") {
-    convertPlusInfInff();
-  } else if (str == "-inf" || str == "-inff") {
-    convertMinusInfInff();
+  if (str == "nan") {
+    convertNan();
+  } else if (str == "nanf") {
+    convertNanf();
+  } else if (str == "+inf") {
+    convertPlusInf();
+  } else if (str == "+inff") {
+    convertPlusInff();
+  } else if (str == "-inf") {
+    convertMinusInf();
+  } else if (str == "-inff") {
+    convertMinusInff();
   }
 }
 
-void convertNanNanf() {
+void convertNan() {
+  double value = std::numeric_limits<double>::quiet_NaN();
   std::cout << "char: impossible" << std::endl;
   std::cout << "int: impossible" << std::endl;
-  std::cout << "float: nanf" << std::endl;
-  std::cout << "double: nan" << std::endl;
-}
-void convertPlusInfInff() {
-  std::cout << "char: impossible" << std::endl;
-  std::cout << "int: impossible" << std::endl;
-  std::cout << "float: +inff" << std::endl;
-  std::cout << "double: +inf" << std::endl;
+  float f = static_cast<float>(value);
+  std::cout << "float: " << f << "f" << std::endl;
+  std::cout << "double: " << value << std::endl;
 }
 
-void convertMinusInfInff() {
+void convertNanf() {
+  float value = std::numeric_limits<float>::quiet_NaN();
   std::cout << "char: impossible" << std::endl;
   std::cout << "int: impossible" << std::endl;
-  std::cout << "float: -inff" << std::endl;
-  std::cout << "double: -inf" << std::endl;
+  std::cout << "float: " << value << "f" << std::endl;
+  double d = static_cast<double>(value);
+  std::cout << "double: " << d << std::endl;
+}
+
+void convertPlusInf() {
+  double value = std::numeric_limits<double>::infinity();
+  std::cout << "char: impossible" << std::endl;
+  std::cout << "int: impossible" << std::endl;
+  float f = static_cast<float>(value);
+  std::cout << "float: +" << f << "f" << std::endl;
+  std::cout << "double: +" << value << std::endl;
+}
+
+void convertPlusInff() {
+  float value = std::numeric_limits<float>::infinity();
+  std::cout << "char: impossible" << std::endl;
+  std::cout << "int: impossible" << std::endl;
+  std::cout << "float: +" << value << "f" << std::endl;
+  double d = static_cast<double>(value);
+  std::cout << "double: +" << d << std::endl;
+}
+
+void convertMinusInf() {
+  double value = -std::numeric_limits<double>::infinity();
+  std::cout << "char: impossible" << std::endl;
+  std::cout << "int: impossible" << std::endl;
+  float f = static_cast<float>(value);
+  std::cout << "float: " << f << "f" << std::endl;
+  std::cout << "double: " << value << std::endl;
+}
+
+void convertMinusInff() {
+  float value = -std::numeric_limits<float>::infinity();
+  std::cout << "char: impossible" << std::endl;
+  std::cout << "int: impossible" << std::endl;
+  std::cout << "float: " << value << "f" << std::endl;
+  double d = static_cast<double>(value);
+  std::cout << "double: " << d << std::endl;
 }
